@@ -98,6 +98,7 @@ var currentHour = new Date().getHours();
 var hours = [9, 10, 11, 12, 13, 14, 15, 16, 17]
 for (var i = 0; i < hours.length; i++) {
     console.log(hours[i]);
+    $("#input" + (i+1)).removeClass("past present future");
     if (currentHour > hours[i]) {
         $("#input" + (i+1)).addClass("past");
     } else if (currentHour >= hours[i] && currentHour < (hours[i] + 1)) {
@@ -108,6 +109,14 @@ for (var i = 0; i < hours.length; i++) {
 }
 };
 
+// set time interval every 15 minutes to check the current hour
+setInterval(function() {
+    $(".time-block .description").each(function(index) {
+      auditScheduler();
+    });
+  }, (1000 * 60) * 15);
+
+// set time interval every 12 hours to check the current date
 
 
 displayCurrentDate();
