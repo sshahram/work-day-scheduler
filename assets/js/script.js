@@ -90,4 +90,25 @@ $("#input8").val(savedTask8);
 var savedTask9 = JSON.parse(localStorage.getItem("task9"));
 $("#input9").val(savedTask9);
 
+// function to update tasks
+
+// color code time blocks
+var auditScheduler = function () {
+var currentHour = new Date().getHours();
+var hours = [9, 10, 11, 12, 13, 14, 15, 16, 17]
+for (var i = 0; i < hours.length; i++) {
+    console.log(hours[i]);
+    if (currentHour > hours[i]) {
+        $("#input" + (i+1)).addClass("past");
+    } else if (currentHour >= hours[i] && currentHour < (hours[i] + 1)) {
+        $("#input" + (i+1)).addClass("present");
+    } else {
+        $("#input" + (i+1)).addClass("future");
+    }
+}
+};
+
+
+
 displayCurrentDate();
+auditScheduler();
