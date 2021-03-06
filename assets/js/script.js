@@ -5,4 +5,5 @@ var currentDay = $("#currentDay").text(currentDate);
 return currentDay;
 };
 
+
 displayCurrentDate();
