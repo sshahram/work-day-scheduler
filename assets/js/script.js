@@ -1,6 +1,6 @@
-var currentDate = moment().format("LL");
 // function to display current date
 var displayCurrentDate = function () {
+var currentDate = moment().format("LL");
 var currentDay = $("#currentDay").text(currentDate);
 return currentDay;
 };
@@ -117,16 +117,6 @@ setInterval(function() {
     });
   }, (1000 * 60) * 15);
 
-// set time interval every 12 hours to check the current date
-// if the current date is changed, then the localStorage get cleared for the new day
-setInterval(function() {
-  var checkDate = moment().format("LL")
-  if (checkDate > currentDate) {
-    for(i=1; i <= 9; i++) {
-        localStorage.removeItem("task" + i)
-    }
-}
-}, (1000 * 60) * 15);
 
 displayCurrentDate();
 auditScheduler();
