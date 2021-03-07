@@ -126,7 +126,7 @@ setInterval(function() {
         localStorage.removeItem("task" + i)
     }
 }
-}, (1000 * 60 * 60));
+}, (1000 * 60) * 15);
 
 displayCurrentDate();
 auditScheduler();
