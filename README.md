@@ -1,6 +1,6 @@
 # Work Day Scheduler
 
-The main purpose of this project is to create a "daily planner tool" that enable users to save events for each hour of the day. 
+The main purpose of this project is to create a "daily planner tool" that enables users to save events for each hour of the day. The time blocks are color-coded to indicate whether they are past, present or future.
 
 ## Task List
 
